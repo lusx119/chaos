@@ -589,25 +589,9 @@
           <item>
            <widget class="QLabel" name="label_13">
             <property name="text">
-             <string>商业贷款额</string>
+             <string>商业贷款额（万）   </string>
             </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_36">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>55</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QLineEdit" name="lineEdit_7"/>
@@ -648,7 +632,7 @@
           <item>
            <widget class="QLabel" name="label_11">
             <property name="text">
-             <string>商贷利率        %</string>
+             <string>商贷利率          %</string>
             </property>
            </widget>
           </item>
@@ -695,25 +679,9 @@
           <item>
            <widget class="QLabel" name="label_12">
             <property name="text">
-             <string>公积金贷款额</string>
+             <string>公积金贷款额（万） </string>
             </property>
            </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer_33">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeType">
-             <enum>QSizePolicy::Fixed</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
           </item>
           <item>
            <widget class="QLineEdit" name="lineEdit_6"/>
@@ -754,7 +722,7 @@
           <item>
            <widget class="QLabel" name="label_16">
             <property name="text">
-             <string>公积金利率      %</string>
+             <string>公积金利率        %</string>
             </property>
            </widget>
           </item>
