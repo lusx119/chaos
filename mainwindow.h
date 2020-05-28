@@ -4,7 +4,8 @@
 #include <QMainWindow>
 #include "dialog.h"
 #include "ui_dialog.h"
-
+#include "dialog1.h"
+#include "ui_dialog1.h"
 namespace Ui {
 class MainWindow;
 }
@@ -20,10 +21,12 @@ public:
 private:
     Ui::MainWindow *ui;
     Dialog *dialog=new Dialog;
+    Dialog1 *dialog1=new Dialog1;
 public slots:
     void choice();
     void choice1();
     void con();
+    void clear();
     //void choice2();
 };
 

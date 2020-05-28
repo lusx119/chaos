@@ -14,6 +14,10 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->comboBox,SIGNAL(currentIndexChanged(QString)),this,SLOT(choice()));
     connect(ui->comboBox1,SIGNAL(currentIndexChanged(QString)),this,SLOT(choice1()));
     connect(ui->pushButton,&QPushButton::released,this,&MainWindow::con);
+    connect(ui->pushButton_2,&QPushButton::released,this,[=](){
+        dialog1->exec();
+    });
+    connect(dialog1->ui->pushButton,&QPushButton::released,this,&MainWindow::clear);
 }
 
 MainWindow::~MainWindow()
@@ -23,8 +27,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::choice()
 {
-    if(ui->comboBox->currentIndex()==0) {ui->lineEdit_3->setText("4.75");ui->stackedWidget_2->setCurrentIndex(0);}
-    else if(ui->comboBox->currentIndex()==1) {ui->lineEdit_3->setText("3.25");ui->stackedWidget_2->setCurrentIndex(0);}
+    if(ui->comboBox->currentIndex()==0) {ui->doubleSpinBox->setValue(4.75);ui->stackedWidget_2->setCurrentIndex(0);}
+    else if(ui->comboBox->currentIndex()==1) {ui->doubleSpinBox->setValue(3.25);ui->stackedWidget_2->setCurrentIndex(0);}
     else if(ui->comboBox->currentIndex()==2) ui->stackedWidget_2->setCurrentIndex(1);
 
 }
@@ -37,9 +41,7 @@ void MainWindow::con()
 {
 
     QString a,b,c,q;
-
-    c=ui->lineEdit_3->text();
-    l=c.toDouble()/1200;
+    l=ui->doubleSpinBox->value()/1200;
     if(ui->comboBox3->currentIndex()==0) year=1;
     else if(ui->comboBox3->currentIndex()==1) year=2;
     else if(ui->comboBox3->currentIndex()==2) year=3;
@@ -148,13 +150,11 @@ void MainWindow::con()
         dialog->ui->label_9->hide();
         dialog->ui->label_10->hide();
         a=ui->lineEdit_7->text();
-        b=ui->lineEdit_5->text();
-        c=ui->lineEdit_6->text();
-        q=ui->lineEdit_10->text();
+        c=ui->lineEdit_3->text();
         double x=a.toDouble()*10000.0;
-        double y=b.toDouble()/1200.0;
+        double y=ui->doubleSpinBox_2->value()/1200.0;
         double t=c.toDouble()*10000.0;
-        double v=q.toDouble()/1200.0;
+        double v=ui->doubleSpinBox_3->value()/1200.0;
         k=x+t;
         if(ui->radioButton->isChecked())
         {
@@ -190,4 +190,15 @@ void MainWindow::con()
     qDebug()<<i;
     dialog->show();
 }
-
+void MainWindow::clear()
+{
+    ui->lineEdit->clear();
+    ui->lineEdit_2->clear();
+    ui->lineEdit_3->clear();
+    ui->lineEdit_4->clear();
+    ui->lineEdit_7->clear();
+    ui->doubleSpinBox->clear();
+    ui->doubleSpinBox_3->clear();
+    ui->doubleSpinBox_2->clear();
+    dialog1->close();
+}
